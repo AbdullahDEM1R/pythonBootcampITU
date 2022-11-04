@@ -1,17 +1,3 @@
-mtn = "IEEE İTÜ öğrenci kolu RAS ve CS komiteleri tarafından düzenlenen Python Bootcamp eğitimine hoş geldiniz!"
-
-# Verilen metni tüm harfleri büyük şekilde yazdırın
-
-buyukMetin = mtn.upper()
-print (buyukMetin)
-
-# Verilen metnin her kelimesinin sadece ilk harfi büyük şekilde yazdırın
-
-baslıkMetin = mtn.title()
-print (baslıkMetin)
-
-# Verilen metni indexleyerek 'RAS ve CS komiteleri' kısmını yazdırın
-
 metin = "abdullah demir"
 yas = 19
 print (metin [::-1]) #burada bütün her şeyi tersten yazdırır.
@@ -42,21 +28,4 @@ liste = [1, 1231, 1234123, "abdullah", 123122, "demir"]
 sayilar.sort() # burada sayilar listesini sıraladık
 print(sayilar)
 sayilar.reverse() # burada sayilar listesini tersten sıraladk.
-print (liste.index("abdullah")) # abdullah değişkeninin indexini bize gösterir
-
-
-
-
-# Verilen metni tamamen tersten yazdırın: "Python" ---> "nohtyP"
-
-# Verilen metinde 'İstanbul' kelimesinin olup olmadığını kontrol edin
-
-# Verilen metinde 'Bootcamp' kelimesinin kaçıncı indexte olduğunu bulun
-
-# Verilen metni boşluklardan ayırarak liste haline çevirin
-
-# Verilen metnin her kelimesini alfabe sırasına göre sıralayın
-
-# Verilen metindeki 'a' ve 'e' karakterlerini silin
-
-# Verilen metindeki her bir kelimeyi alt alta yazdırın
+print (liste.index("abdullah")) # abdullah değişkeninin indexini bize gösterir.
