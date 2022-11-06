@@ -1,0 +1,376 @@
+                                            ############         D Ö N G Ü L E R         ############
+
+
+name = "Abdullah DEMİR"
+for n in name:
+    print(n)    # String değerin karakterlerini tek tek alt alta yazdırır.
+
+tuple = [(1,2),(1,3),(3,5)]
+for t in tuple:
+    print(t)    # Tuple listesindeki tuplelara erişiriz.
+for a,b in tuple:
+    print(b)    # Sadece tupleların ikinci değerlerini getirir.
+
+dic = {"k1" : 1, "k2" : 2, "k3" : 3}
+for item in dic:
+    print (item)    #Sadece key değerleri getirir. k1 k2 k3
+for item in dic.items():
+    print(item)     #Eleman gruplarına ulaşırız.
+for key, value in dic.items():
+    print(key, value)
+
+#                   FOR DÖNGÜSÜ
+
+sayilar = [1,3,5,7,9,12,19,21]
+
+# 1 - sayilar listesindeki hangi sayılar 3'ün katları ?
+for x in sayilar:
+    if x%3==0:
+        print(f"{x}, 3'ün katıdır.")
+# 2 - sayilar listesinde sayıların toplamı kaçtır ?
+toplam = 0
+for x in sayilar:
+    toplam += x
+print(f"sayıların toplamı {toplam} değeridir")
+# # 3 - sayilar listesindeki tek sayıların karesini alınız.
+for x in sayilar:
+    if x%2!=0:
+        print(f"Tek sayıların kareleri {x*x}")
+
+sehirler = ["kocaeli", "istanbul","ankara", "izmir", "rize"]
+
+# 4 - sehilerden hangileri en fazla 5 karakterlidir ?
+
+for karakter in sehirler:
+    if len(karakter) < 6:
+        print(f"{karakter} şehri en fazla beş harflidir.")
+
+urunler = [
+    {"name" : "samsung S6", "price" : "3000"},
+    {"name" : "samsung S7", "price" : "4000"},
+    {"name" : "samsung S8", "price" : "5000"},
+    {"name" : "samsung S9", "price" : "6000"},
+    {"name" : "samsung S10", "price" : "7000"}
+]
+
+# 5 - urunlerin fiyatları toplamı nedir ?
+toplamFiyat = 0
+for x in urunler:
+    toplamFiyat += int(x["price"])
+print (toplamFiyat)
+
+# 6 - urunlerden fiyatı en fazla 5000 olann ürünleri gösterin.
+
+for x in urunler:
+   if (int(x["price"]) <= 5000):
+    print(x["name"])
+
+                                                      #   WHİLE DÖNGÜSÜ
+
+x = 0
+while x <= 100:
+    if x % 2 == 1:
+        print (f"sayı tek : {x}")
+    else:
+        print(f"sayı çift: {x}")
+    x += 1
+print ("bitti")
+
+name = ""   #boş karakter False olarak alınır.
+while not name:          #not name = not False yani True olur.
+    name = input("İsminizi giriniz : ")
+print(f"Merhaba, {name}")
+
+                        #  WHİLE DÖNGÜSÜ UYGULAMALARI
+sayilar = [1,3,5,7,9,12,19,21]
+
+# 1 - sayilar listesini while ile ekrana yazdır.
+x = 0
+while x < len(sayilar):
+    print(sayilar[x])
+    x += 1
+
+# 3 - 1 - 100 arasındaki sayıları azalan şekilde ekrana yazdır.
+
+i = 100
+
+while i > 0:
+    print (i)
+    i -= 1
+
+# 4 - kullanıcıdan alacağınız 5 sayıyı ekrana sıralı bir şekilde yazdır.
+
+sayilar = []
+i = 0
+while i < 5:
+    sayi = int(input("Bir sayı girin : "))
+    sayilar.append(sayi)
+    i += 1
+print(sayilar)
+
+# 5 - kullanıcıdan alacağınız sınırsız ürün bilgisini urunler listesi içinde saklayınız.
+#     ** ürün sayısını kullanıcıya sor
+#     ** dictionary listesi yapısı (name, price) şeklinde olsun
+#     ** ürün ekleme işlemi bittiğinde ürünleri ekrana while ile listeleyin.
+
+urunler = []
+adet = int(input("kaç ürün girmek intersiniz ? -> "))
+i = 0
+
+while (i < adet):
+    name = input("ürün ismi : ")
+    price = input("ürün fiyatı : ")
+    urunler.append({
+        "isim" : name,
+        "fiyat" : price
+    })
+    i += 1
+
+for x in urunler:
+    print (f"ürün adı : {x['isim']} -- ürün fiyatı : {x['fiyat']}")
+
+                                                       #   BREAK ve CONTINUE KOMUTLARI
+
+# break komutuna denk gelirse döngüden çıkar.
+# continue komutuna denk gelirse o döngü turunu iptal eder.
+
+# range komutu 0 dan yazdığımız sayıya kadar bize aralık verir soldan sıfır dahildir fakat sağda yazdığımız sayı dahil değildir. Eğer sağdan bir aralık başlangıcı vermek istersek range(2, 103) 2den 102 de dahil olacak şekilde bir aralık verir. range(2, 100, 20) yirmişer yirmişer artar.
+
+selamlama = "Merhaba"
+for item in enumerate(selamlama):
+    print(item)
+# enumerate önce index değeri sonrasında da indexdeki değeri teker teker ayırarak gösterir.
+
+list1 = [1,2,3,4,5]
+list2 = ["a","b","c","d","e"]
+list3 = [100, 200, 300, 400, 500]
+print(list(zip(list1, list2, list3)))
+# index şeklinde listedeki ilk elemanın birinci indexi 1 ikinci indexi a 3. indexi 100 olur ikincii elemanın aynı şekilde birinci indexi 2 ikinci indexi b olur gibi gibi.
+for item in zip(list1, list2, list3):
+    print(item)
+# bu şekilde liste elemanları şeklinde yazdırılır.
+
+for a,b,c in zip(list1,list2,list3):
+    print(a,b,c)
+# bu şekilde de listeden çıkar ve elemanların değerlerini alt alta yazdırır.
+
+for a in zip(list1,list2,list3):
+    print(a)
+# bu şekilde de sadece list1in elemanlarını yazdırır.
+
+sayilar = [x for x in range (10)]  # 0 dan 10 a kadar sayıları depolayan bir liste oluşturldu.
+print(sayilar )
+
+for x in range (10):
+    print(x**2)
+sayilar = [x**2 for x in range (10)]    # alınan x değerinin karesi alınır ve sayilar listesine atanır.
+print (sayilar)
+
+sayilar = [x*x for x in range(10) if x % 3 == 0]
+print (sayilar)
+
+myString = "Abdullah"
+myList = []
+
+myList = [letter for letter in myString]
+print(myList)
+
+yillar = [1976, 1986, 2003, 1998]
+yaslar = [2022-yil for yil in yillar]
+print(yaslar)
+
+
+sonuclar = [x if x % 2 == 0 else "TEK" for x in range (1,10)]
+# sonuclar listesine xleri ekler fakat x değerini eklemesi için if koşulu true döndürmeli eğer false döndürürse TEK yazdırır.
+print(sonuclar)
+
+result = []
+
+for x in range(3):
+    for y in range(3):
+        result.append((x,y))
+print(result)
+
+numbers = [(x,y) for x in range (3) for y in range (3)] # x ve y değişkeni alır ve x i 0dan 3 e kadar y yi de 0 dan 3 e kadar alır. Aynı yukardaki gibi olur
+
+                                    ############         F O N K S İ Y O N L A R         ############
+
+
+# list.append() dediğimizde append() bir metot olur.
+def sayHello():
+    print("Hello")
+sayHello()
+
+def sayHello(name = "user"): #eğer name verilirse o geçer fakat verilmezse onun yerine = işaretinden sonra ne verdiysek o yazılır
+     print("Hello " + name)
+sayHello()
+
+def sayHello(name = "user"):
+    return "Hello " + name
+
+mesaj = sayHello()
+print(mesaj) 
+
+
+def total(num1, num2):
+    return num1 + num2
+
+result = total (20, 50) 
+print(result)
+
+def ageCalculator(birthDate):
+    return 2022 - birthDate
+
+ageofCinar = ageCalculator(1998)
+print(ageofCinar)
+
+def retirementYearCalculator(birthDate, name):
+    '''
+    DOCSTRING: Doğumyılınıza göre hangi yıl emekli olacağınızı ve kaç yılınız kaldığını size söyler.
+    INPUT: Dogum yili
+    OUTPUT: Hesaplanan yil bilgisi ve gereken yil bilgisi
+    '''
+    age = ageCalculator (birthDate)
+    retirementYear = 2022 + (65 - age)
+    retirementNeed = 65 - age
+
+    if retirementYear > 2022:
+        print (f"Emeklilik yılınız -->> {retirementYear}")
+        print (f"Emekliliğe kalan yılınız -->> {retirementNeed}")
+    
+    else:
+        print("Emeklisiniz.")
+
+retirementYearCalculator(2003, "Abdullah")
+
+help(retirementYearCalculator)
+
+
+def changeName(n):  # değiştiremez çünkü değişkenin kopyası üzerinden değiştirmek istiyoruz adresi üzerinden değil.
+    n = "ada"
+
+name = "yiğit"
+
+changeName(name)
+print(name)
+
+def change(n):
+    n[0] = "istanbul"   #listedeki 0. indexi istanbul değeri ile değiştirir. referan üzerinden değieştirme yapılır ve bu referans dediğimiz de listenin adresidir.
+sehirler = ["ankara", "izmir"]
+kopyaSehirler = sehirler[:] #sehirlerin adresini değil bütün elemanlarını kopyaladığımızdan dolayı sehirlerde yapılan değişiklik kopya listeyi etkilemez.
+sehirler2 = sehirler[:]
+
+change(sehirler)
+print(sehirler)
+print(kopyaSehirler)
+
+change(sehirler2[:]) # fonksiyonun içine kopya listeyi attık o yüzden sehirler değişmez
+print(sehirler)
+
+def add (a, b, c = 0, d = 0):      # eğer bazen iki vazen üç değeri toplamak istersek ve ikili topladığımızda hata almamak istersek burada yapıldığı gibi c parametresi direkt sıfıra eşitlenir.
+    return sum((a, b, c))
+print(add(10,20))
+print(add(10,20,30))
+
+def toplam (*params):       #girdiğimiz kadar parametresi olur. Yukardaki işlemi hem iki hem de yirmi parametreli olarak yazmaktansa bu şekilde kullanılır.
+    print(params)   #girilen büütn parametreler tuple şeklinde liste olarak ekrana yazdırılır
+    return(sum(params))
+
+print(toplam(10,20,30,100,40,50,60,70,10,20,30))
+
+  #eğer sum fonksiyonu kullanılmak istenmezse fakat gene yüksek sayılı parametreler ile çalışacaksak döngü açılır.
+
+def toplam2 (*params):
+    toplam = 0
+
+    for x in params:
+        toplam += x
+    return toplam
+
+print(toplam2(2,3,4,5,6,7))
+
+def displayUser (**args):     #bir dictionary göndereceksek fonksiyon parametresinin önüne iki adet yıldız koymamız gerekiyor
+    for key, value in args.items():
+        print(f"{key} is {value}")
+
+displayUser(name = "Abdullah", age = 19, city = "İstanbul")
+
+def myFunction (a, b , *args, **kwargs):
+    print(a)
+    print(b)
+    print(args)
+    print(kwargs)
+#       #Burada ilk iki değeri a ve b olarak ayrı ayrı alır daha sonraki elemanları liste olarak tutar ve keyword gördüğü zamanda geri kalan değerleri dict olarak tutar
+myFunction(10,20,30,40,50,60,70, isim = "abdullah", soyisim = "demir")
+
+##     ------> UYGULAMALAR
+
+#  1- Gönderilen bir kelimeyi belirtilen kez ekrana yazma
+
+def yazdir (kelime, adet):
+    print(kelime * adet)
+yazdir ("Merhaba \n", 10)
+
+#  2- Kendine gönderilen sınırsız sayıdaki parametreyi bir liste halinde yazma 
+
+def listeyeCevirme(*params):
+    liste = []
+    
+    for param in params:
+        liste.append(param)
+    
+    return liste
+
+result = listeyeCevirme(10,20,30,40,50,60,70,80,90,100)
+print(result)
+
+#  3- Gönderilen 2 sayı arasındaki tüm asal sayıları bulma
+
+def asalSayiBul(baslangic, bitis):
+    for sayi in range(baslangic,bitis + 1):
+        if sayi > 1 :
+            for i in range (2,sayi):
+
+                if sayi % i == 0:
+                    break
+            else:
+                    print(sayi)
+
+baslangic = int(input("birinci sayıyı giriniz -> "))
+bitis = int(input("bitiş sayısını giriniz -> "))
+asalSayiBul(baslangic,bitis)
+
+#  4- Kendisine gönderilen bir sayının tam bölenlerini bir liste halinde tutma ve gösterme.
+
+sayi = int(input("Hangi sayının tam bölenlerini bulmak istersiniz ? ->> "))
+
+def tamBolenlerBulma(sayi):
+    tamBolenler = []
+    for x in range (2, sayi):
+        if (sayi % x == 0):
+            tamBolenler.append(x)
+    return tamBolenler
+
+print(tamBolenlerBulma(sayi))
+
+# Eğer bir fonksiyonu liste üzerindeki her eleman için ayrı ayrı yapmak istiyorsal map fonksiyonu kullanılır.
+
+def kareAl(sayi): return sayi ** 2
+
+sayilar = [1,3,5,7,9]
+
+sonuc = list(map(kareAl, sayilar)) ## burda list fonksiyonu içiine almazsak bize sadece bir değer döndürür ve list ile yazdığımızda listedeki bütün elemanları liste içinde yazdıırır. map kullanırken fonksiyonun adı yazılır ve yanına da kullanılacak liste yazılır.
+print(sonuc)
+
+result = list(map(lambda num: num ** 2, sayilar)) # sadece tek bir sefer kullanılacak fonksiyon yazdık ve isimsiz bir fonksiyon olur. Buna da lambda expression denir.
+
+print(result)
+
+numbers = [1,2,3,5,6,7,9,10]
+def checkEven (num): return num % 2 == 0
+result = list (filter(checkEven, numbers))
+print(result)
+
+def checkEven (num): return num % 2 == 0
+result = list (filter(lambda num : num % 2 == 0, numbers))
+print(result)
